@@ -20,6 +20,10 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: db
+  username: postgres
+  password: postgres
+  database: hermitcraft_tcg_development
 
 development:
   <<: *default
@@ -84,3 +88,9 @@ production:
   database: hermitcraft_tcg_production
   username: hermitcraft_tcg
   password: <%= ENV["HERMITCRAFT_TCG_DATABASE_PASSWORD"] %>
+
+cache:
+  adapter: redis
+  host: localhost
+  port: 6379
+  namespace: cache
