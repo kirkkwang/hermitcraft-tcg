@@ -1,4 +1,8 @@
 <div>
   <h1 class="font-bold text-4xl">Deck#index</h1>
-  <p><%= current_user.decks %></p>
+  <ul>
+    <% current_user.decks.each do |deck| %>
+      <li><%= deck.name %></li>
+    <% end %>
+  </ul>
 </div>
