@@ -1,0 +1,8 @@
+<h1 class="font-bold text-4xl">Deck#index</h1>
+<div>
+  <ul>
+    <% @decks.each do |deck| %>
+      <li><%= link_to deck.name, deck_path(deck) %></li>
+    <% end %>
+  </ul>
+</div>
