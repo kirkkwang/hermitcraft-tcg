@@ -1,14 +1,2 @@
-<% if user_signed_in? %>
- <div> Welcome <%= current_user.email %> </div>
-  <%= link_to "Sign out!", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to "Sign in!", new_user_session_path %>
-<% end %>
-<div>
-  <h1 class="font-bold text-4xl">HermitcraftTCG</h1>
-</div>
 <%= turbo_frame_tag "my_decks" do %>
-  <div>
-    <%= link_to 'My Decks', decks_path %>
-  </div>
 <% end %>

@@ -1,0 +1,46 @@
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+  <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4 md:px-6 py-2.5">
+    <%= link_to(
+      image_tag('grass_block.webp', class: "h-6 mr-3 sm:h-9", alt: "Minecraft Grass Block") + "HermitcraftTCG",
+      root_path,
+      class: "flex items-center self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+      ) %>
+    <div class="flex md:order-2">
+      <button
+        type="button"
+        class="text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-blue-300
+          font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-green-600 dark:hover:bg-green-700
+          dark:focus:ring-green-800 w-24">
+        <% if user_signed_in? %>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Sign in", new_user_session_path %>
+        <% end %>
+      </button>
+    </div>
+  </div>
+</nav>
+<nav class="bg-gray-50 dark:bg-gray-700">
+  <div class="max-w-screen-xl px-4 py-3 mx-auto md:px-6">
+    <div class="flex items-center">
+      <ul class="flex flex-row mt-0 mr-6 space-x-8 text-sm font-medium">
+        <li>
+          <%= link_to 'Decks', decks_path,
+            id: 'deck_show',
+            class: "text-gray-900 dark:text-white hover:underline",
+            aria: { current: 'page' },
+            data: { turbo_frame: "my_decks" } %>
+        </li>
+        <li>
+          <a href="#" class="text-gray-900 dark:text-white hover:underline">Cards</a>
+        </li>
+        <li>
+          <a href="#" class="text-gray-900 dark:text-white hover:underline">Game</a>
+        </li>
+        <li>
+          <a href="#" class="text-gray-900 dark:text-white hover:underline">Rules</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
